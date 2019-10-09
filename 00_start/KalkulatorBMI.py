@@ -1,7 +1,7 @@
 print("Oto minimalistyczny kalkulator BMI. \nZaraz zostaniesz poproszony o podanie swojej wagi w kilogramach oraz wzrostu w metrach. ")
 print("Pamiętaj aby podając wzrost używać kropki a nie przecinka.")
 input("Jeśli jesteś gotowy wciśnij ENTER...")
-masa = input("Podaj swoją wagę (w kilogramach): \n")
+masa = float(input("Podaj swoją wagę (w kilogramach): \n"))
 wzrost = input("Podaj swój wzrost (w metrach): \n")
 print("Zatem ważysz", masa,"kg i masz", wzrost, "m wzrostu")
 BMI = (float(masa)) / (float(wzrost)**2)
