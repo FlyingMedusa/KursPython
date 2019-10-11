@@ -1,0 +1,15 @@
+#Zadanie czwarte
+print("Zadanie czwarte:")
+print("Sprawdzę czy tytuł i nazwisko składają się tylko z liter, natomiast liczba stron jest wartością liczbową \n ")
+title = input("Podaj tytuł: \n")
+surname = input("Podaj nazwisko autora: \n")
+pages = input("Podaj ilość stron: \n")
+print(title.isalpha() , surname.isalpha() , pages.isdigit())
+print("Pilnuję by tytuły i nazwiska były z dużej litery:")
+print(title.capitalize())
+print(surname.capitalize())
+print(" Podaję dane jednym ciągiem ze spacjami: ")
+book = title.capitalize() + " " + surname.capitalize() + " " + pages
+print(book)
+print("Liczę liczbę znaków w ciągu 'book'")
+print(len(book))
