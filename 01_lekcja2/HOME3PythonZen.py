@@ -18,4 +18,11 @@ Although never is often better than *right* now.
 If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!"""
-print(zenpython.count("better"))
+print("Ilość słowa 'better':")
+print(zenpython.count("better"), "\n")
+print("Zen pozbawiony gwiazdek: \n")
+print(zenpython.replace('*', ''), "\n")
+print("Zen z pierwszym 'explain' zamienionym na 'understand': \n")
+print(zenpython.replace("explain", "understand" , 1), "\n")
+print("Zen bez spacji, ale z myślnikami: ")
+print(zenpython.replace(" ", "-"))
