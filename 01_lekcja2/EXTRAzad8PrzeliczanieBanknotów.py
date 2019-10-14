@@ -20,3 +20,4 @@ print("Wymieniając PLN na Euro dostaniesz prawdopodobnie: \n ",
       ilosc5, "\tbanknotów o wartości 5Euro.")
 
 print("\n Aby wyjść z programu kliknij ENTER...")
+
