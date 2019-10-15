@@ -16,6 +16,6 @@ oceny = oceny.split("-")
 
 licznik = 0
 
-while licznik < 3:
+while licznik < len(przedmioty):
     print(przedmioty[licznik], "-", oceny[licznik])
     licznik = licznik + 1

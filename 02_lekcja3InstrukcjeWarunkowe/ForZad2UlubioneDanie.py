@@ -1,7 +1,12 @@
-skladniki = ["makaron", "sos", "kurczak", "warzywa", "bazylia"]
-przepis = ["Ugotuj", "Podgrzej na patelni", "Podsmaż", "Wymieszaj z sosem", "Udekoruj"]
+ingr = ["makaron", "sos", "kurczak", "warzywa", "bazylia"]
+activity = ["Ugotuj", "Podgrzej na patelni", "Podsmaż", "Wymieszaj z sosem", "Udekoruj"]
 
 
-for i in skladniki:
+for i in range(len(ingr)):
+    print(activity[i], ingr[i])
 
-    print(i)
+print("***while***")
+counter = 0
+while counter < len(ingr):
+    print(activity[counter], ingr[counter])
+    counter += 1
