@@ -6,3 +6,6 @@ details = {'name': 'Tom', 'age': 21, 'city': 'Dublin'}
 details['personality'] = 'stubborn'
 
 print(details)
+
+for i in range(1,4):
+    print("Hello")
