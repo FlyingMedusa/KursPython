@@ -74,6 +74,8 @@ v1 = "punkt"
 v2 = "punkty"
 v3 = "punktów"
 
+print("\n--------------------------------------------")
+
 if wynik_u == 1:
     print("\nZdobyłeś łącznie", wynik_u, v1)
 elif wynik_u == 2 or wynik_u == 3 or wynik_u == 4:
