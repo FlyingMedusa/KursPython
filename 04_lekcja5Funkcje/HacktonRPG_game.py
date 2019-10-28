@@ -17,8 +17,8 @@ def name_creator():
     indicator = (name_length / 2) + 1
     i = 1
     while i < indicator:
-        cons = random.choice(list(consonants))
-        vow = random.choice(list(vowels))
+        cons = random.choice(consonants)
+        vow = random.choice(vowels)
         name.append(cons)
         name.append(vow)
         i += 1
@@ -26,12 +26,12 @@ def name_creator():
 
 
 def blind_element(array):
-    element = random.choice(list(array))
+    element = random.choice(array)
     return element
 
 
 def finding_the_killer(array):
-    killer = random.choice(list(array))
+    killer = random.choice(array)
     return killer
 
 
@@ -51,8 +51,8 @@ name = name_creator()
 
 final_name = "".join(name)
 final_name = final_name.capitalize()
-final_alias = random.choice(list(alias))
-final_race = random.choice(list(race))
+final_alias = random.choice(alias)
+final_race = random.choice(race)
 
 warrior_name = "{name} the {alias} {race}".format(name=final_name, alias=final_alias, race=final_race)
 
