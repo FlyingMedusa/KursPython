@@ -1,15 +1,21 @@
-Project:            Link generator
+##Project:            Link generator
+
 Python version:     Python 3
 
-Files:              HackGeneratorLinkow.py  [main file]
-                    GeneratorModul1.py      [module file]
-                    createdlinks.txt        [output storing file]
+####Files:
 
-Main aim:
+HackGeneratorLinkow.py  [main file]
+
+GeneratorModul1.py      [module file]
+
+createdlinks.txt        [output storing file]
+
+##Main aim:
 Link generator for affiliate program users of Helion.pl.
 
 The user can turn regular links into links of a chosen client.
-Regular links that can be changed this way:
+
+####Regular links that can be changed this way:
     - home page
         e.g. https://helion.pl/
     - category page
@@ -19,14 +25,20 @@ Regular links that can be changed this way:
     - basket page
         e.g. https://helion.pl/zakupy/edit.cgi
 
-    An example of a change [user id in this example: 90412]:
-        input:  https://helion.pl/kategorie/ebooki
-        output: https://helion.pl/page/90412/kategorie/ebooki
+An example of a change [user id in this example: 90412]:
 
-Input:
-        user id,
-        basic link
-Output:
-        updated link according to the users id
-        links stored in a .txt file
+    input:  https://helion.pl/kategorie/ebooki
+    
+    output: https://helion.pl/page/90412/kategorie/ebooki
+
+
+#####General:
+<p>Input:<br>
+
+    user id,<br>basic link<br>
+    
+Output:<br>
+
+        updated link according to the users id<br>
+        links stored in a .txt file</p>
 
