@@ -1,0 +1,17 @@
+kittens
+elephants
+whales
+rhinoceros
+puppies
+anaconda
+tarantulas
+insect
+crocodile
+cheetah
+squirrel
+penguin
+hippopotamus
+octopus
+raccoon
+cockroach
+
