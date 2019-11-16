@@ -12,9 +12,10 @@ class Shop:
         self.price = price
         self.discount = discount
 
-    def display(self):
-        for i in arr_shop:
-            print(i)
+    # def display(self, array):
+    #     self.array = array
+    #     for i in array:
+    #         print(array[i])
 
     def try_on(self):
         appearance = ["stylish", "good", "bad", "fat", "stunning", "obese"]
@@ -43,9 +44,9 @@ it_mascara = Shop("blue mascara", "cosmetics", "blue", 25, "30%")
 it_lashes = Shop("fake lashes", "cosmetics", "brown", 50, "0%")
 it_lipstick = Shop("crimson lipstick", "cosmetics", "crimson", 80, "25%")
 
-arr_shop = [it_dress, it_shoes]
+arr_shop = [it_dress, it_shoes, it_heels, it_hat, it_necklace, it_earrings, it_ring, it_coat, it_mascara, it_lashes, it_lipstick]
 
-Shop.display(arr_shop)
+# print(Shop.display(arr_shop))
 it_mascara.try_on()
 it_shoes.look_on()
 it_necklace.look_on()

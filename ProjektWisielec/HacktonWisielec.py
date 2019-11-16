@@ -13,6 +13,114 @@ def storing_letters(letter):
     guessed_letters.append(letter)
 
 
+HANGMAN = (
+    """
+    ----------------
+    |              |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    -----------------
+    """,
+    """
+    ----------------
+    |              |
+    |              O
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    -----------------
+    """,
+    """
+    ----------------
+    |              |
+    |              O
+    |             -+-
+    |
+    |
+    |
+    |
+    |
+    |
+    -----------------
+    """,
+    """
+    ----------------
+    |              |
+    |              O
+    |            /-+-
+    |
+    |
+    |
+    |
+    |
+    |
+    -----------------
+    """,
+    """
+    ----------------
+    |              |
+    |              O
+    |            /-+-/
+    |
+    |
+    |
+    |
+    |
+    |
+    -----------------
+    """,
+    """
+    ----------------
+    |              |
+    |              O
+    |            /-+-/
+    |              |
+    |
+    |
+    |
+    |
+    |
+    -----------------
+    """,
+    """
+    ----------------
+    |              |
+    |              O
+    |            /-+-/
+    |              |
+    |             |
+    |             |
+    |
+    |
+    |
+    -----------------
+    """,
+    """
+    ----------------
+    |              |
+    |              O
+    |            /-+-/
+    |              |
+    |             | |
+    |             | |
+    |
+    |
+    |
+    -----------------
+    """
+)
+
+
 print("\nWelcome to the HANGMAN game!")
 
 while True:
@@ -47,7 +155,7 @@ print("\nOur hint for you:\n\tthe word has",secret_len,"letters!")
 
 i = 0
 mistakes = 0
-while i < 10:
+while i < 8:
     user_guess = input("\nGive me a letter:\n\t\t")
     if user_guess in guessed_letters:
         print("You've already chosen this letter!")
@@ -65,6 +173,7 @@ while i < 10:
                 is_guessed = True
         else:
             print("This letter is not in the secret word!")
+            print(HANGMAN[i])
             i += 1
 
         if is_guessed == True:
