@@ -1,11 +1,32 @@
-Link generator for affiliate program users.
-Features: home page, category page, product page and basket page.
+Project:            Link generator
+Python version:     Python 3
+
+Files:              HackGeneratorLinkow.py  [main file]
+                    GeneratorModul1.py      [module file]
+                    createdlinks.txt        [output storing file]
+
+Main aim:
+Link generator for affiliate program users of Helion.pl.
+
+The user can turn regular links into links of a chosen client.
+Regular links that can be changed this way:
+    - home page
+        e.g. https://helion.pl/
+    - category page
+        e.g. https://helion.pl/kategorie/ebooki
+    - product page
+        e.g. https://helion.pl/ksiazki/jak-naprawic-sprzet-elektroniczny-poradnik-dla-nieelektronika-wydanie-ii-michael-jay-geier,janas2.htm#format/e
+    - basket page
+        e.g. https://helion.pl/zakupy/edit.cgi
+
+    An example of a change [user id in this example: 90412]:
+        input:  https://helion.pl/kategorie/ebooki
+        output: https://helion.pl/page/90412/kategorie/ebooki
 
 Input:
-    user id,
-    basic link
-
+        user id,
+        basic link
 Output:
-    updated link according to the users id
+        updated link according to the users id
+        links stored in a .txt file
 
-All created links are stored in createdlinks.txt
