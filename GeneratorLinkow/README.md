@@ -1,8 +1,8 @@
-##Project:            Link generator
+## Project:          Link generator
 
 Python version:     Python 3
 
-####Files:
+#### Files:
 
 HackGeneratorLinkow.py  [main file]
 
@@ -10,12 +10,12 @@ GeneratorModul1.py      [module file]
 
 createdlinks.txt        [output storing file]
 
-##Main aim:
+## Main aim:
 Link generator for affiliate program users of Helion.pl.
 
 The user can turn regular links into links of a chosen client.
 
-####Regular links that can be changed this way:
+#### Regular links that can be changed this way:
     - home page
         e.g. https://helion.pl/
     - category page
