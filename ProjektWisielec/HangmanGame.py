@@ -26,7 +26,6 @@ while i < max_mistakes:
         print("You've already chosen this letter!")
     else:
         mod.storing_letters(user_guess, guessed_letters)
-
         if user_guess in secret_word:
             visible_result = mod.guessed_letter(secret_len, secret_word, user_guess,showing_list)
             if "_" not in visible_result:
