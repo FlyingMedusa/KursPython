@@ -7,8 +7,6 @@ print("Your file name:", filename)
 with open(filename, encoding="utf-8") as f:
     lines = f.readlines()
 
-# print(list_checker(lines))
-
 outputfile = mod.creating_file()
 with open(outputfile, 'w') as fw:
     previous_line = "I'm the zero sentence"
