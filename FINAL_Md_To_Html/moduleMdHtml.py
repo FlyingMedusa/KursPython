@@ -60,6 +60,8 @@ def inside_checker(line):
         line = into_bold1(line)
     if is_bold2(line):
         line = into_bold2(line)
+    if "<br></br>" in line:
+        line = line.replace("<br></br>","")
     return line
 
 
