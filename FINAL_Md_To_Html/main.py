@@ -14,3 +14,4 @@ with open(outputfile, 'w') as fw:
         output_lines, previous_line = mod.grand_checker(line,previous_line)
         save = str(output_lines) +"\n"
         fw.write(save)
+print("Done!")

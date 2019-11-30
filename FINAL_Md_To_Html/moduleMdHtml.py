@@ -51,16 +51,24 @@ def grand_checker(line,previous_line):
         line = into_paragraph(line)
     previous_line = line
     line = the_future_mode(p, previous_line)
+    line = inside_checker(line)
     return line, previous_line
+
+
+def inside_checker(line):
+    if is_bold(line):
+        pass
 
 
 def the_future_mode(previous_line, now):
     if previous_line[-4:] == "/li>" and now[:4] != "\t<li":
-        pass
+        previous_line = previous_line.strip("\t")
+        previous_line = previous_line[4:]
         if ord_list_possibility(previous_line):
             now = "</ol>\n" + now
-        elif unord_list_poss(previous_line):
+        if unord_list_poss(previous_line):
             now = "</ul>\n" + now
+
     return now
 
 
@@ -83,6 +91,10 @@ def ord_list_possibility(line):
         if line[k].isnumeric() and line[k+1] == "." and line[k+2] == " ":
             return True
         elif line[k].isnumeric() and line[k+1].isnumeric():
+            continue
+        elif (line[k] == " " and line[k+1].isnumeric()):
+            continue
+        elif line[k] == " " and line[k+1] == " ":
             continue
         else:
             return False
@@ -113,7 +125,11 @@ def into_unord_list(line, previous_line):
         list = "\t<li>" + line + "</li>"
     return list
 
+
 def into_paragraph(line):
     list = "<p>" + line + "</p>"
     return list
+
+def is_bold(line):
+    if line
 

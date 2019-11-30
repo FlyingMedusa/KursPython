@@ -25,13 +25,3 @@ for el in list:
 # **Baby**y 2
 #
 # B*b**bby** 2
-previous_line = "xxxx"
-lists = ["1.dsdabfuba", "dfasnjnf", "21342.fjsng", "3425.vda", "afgfadfg8.",  "hbds1.nasi"]
-for line in lists:
-    if previous_line[-4:] != "/li>":
-        list = "<ol>\n<li>" + line + "</li>"
-        print(list)
-    else:
-        list = "<li>" + line + "</li>"
-        print(list)
-    previous_line = list
