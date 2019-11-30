@@ -56,8 +56,11 @@ def grand_checker(line,previous_line):
 
 
 def inside_checker(line):
-    if is_bold(line):
-        pass
+    if is_bold1(line):
+        line = into_bold1(line)
+    if is_bold2(line):
+        line = into_bold2(line)
+    return line
 
 
 def the_future_mode(previous_line, now):
@@ -130,6 +133,58 @@ def into_paragraph(line):
     list = "<p>" + line + "</p>"
     return list
 
-def is_bold(line):
-    if line
+
+def is_bold1(line):
+    occ = line.count('**')
+    if occ > 1:
+        return True
+    else:
+        return False
+
+
+def is_bold2(line):
+    occ = line.count('__')
+    if occ > 1:
+        return True
+    else:
+        return False
+
+
+def into_bold1(line):
+    occ = line.count('**')
+    if occ > 1:
+        if occ % 2 == 0:
+            for i in range(0, occ + 1):
+                if i % 2 == 0:
+                    line = line.replace("**", "<br>", 1)
+                else:
+                    line = line.replace("**", "</br>", 1)
+            return line
+        else:
+            for i in range(0, occ - 1):
+                if i % 2 == 0:
+                    line = line.replace("**", "<br>", 1)
+                else:
+                    line = line.replace("**", "</br>", 1)
+            return line
+
+
+def into_bold2(line):
+    occ = line.count('__')
+    if occ > 1:
+        if occ % 2 == 0:
+            for i in range(0, occ + 1):
+                if i % 2 == 0:
+                    line = line.replace("__", "<br>", 1)
+                else:
+                    line = line.replace("__", "</br>", 1)
+            return line
+        else:
+            for i in range(0, occ - 1):
+                if i % 2 == 0:
+                    line = line.replace("__", "<br>", 1)
+                else:
+                    line = line.replace("__", "</br>", 1)
+            return line
+
 
