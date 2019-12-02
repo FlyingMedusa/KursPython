@@ -12,7 +12,9 @@ lines = cl.deleting_empty_lines(lines)
 
 outputfile = cl.creating_file()
 with open(outputfile, 'w') as fw:
-    fw.write("<head>\n</head>\n<body>\n")
+    header = cl.head_title()
+    fw.write(header)
+    fw.write("<body>\n")
     previous_line = "I'm the zero sentence"
     for line in lines:
         output_lines, previous_line = mod.grand_checker(line,previous_line)

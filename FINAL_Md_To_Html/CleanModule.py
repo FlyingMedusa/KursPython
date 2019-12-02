@@ -38,3 +38,9 @@ def creating_file():
             print("It shouldn't have happened")
 
     return filename
+
+
+def head_title():
+    title = input("\nPlease give me the title of your page:\n\t")
+    header = ("<head>\n<title>" + title + "</title>\n</head>\n")
+    return header

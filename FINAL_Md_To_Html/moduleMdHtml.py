@@ -26,13 +26,13 @@ def grand_checker(line,previous_line):
 
 
 def the_future_mode(previous_line, now):
-    if previous_line[-4:] == "/li>" and now[:4] != "\t<li":
-        previous_line = previous_line.strip("\t")
-        previous_line = previous_line[4:]
+    if previous_line[-4:] == "/li>" and now[:6] != "\t\t<li":
+        previous_line = previous_line.strip("\t\t")
+        previous_line = previous_line[6:]
         if ord_list_possibility(previous_line):
-            now = "</ol>\n" + now
+            now = "\t</ol>\n" + now
         if unord_list_poss(previous_line):
-            now = "</ul>\n" + now
+            now = "\t</ul>\n" + now
 
     return now
 
@@ -47,7 +47,7 @@ def deleting_char(line):
 
 def into_header(num, line):
 
-    header = "<h"+ str(num) + ">" + line + "</h" + str(num) + ">"
+    header = "\t<h"+ str(num) + ">" + line + "</h" + str(num) + ">"
     return header
 
 
@@ -67,9 +67,9 @@ def ord_list_possibility(line):
 
 def into_ord_list(line, previous_line):
     if previous_line[-4:] != "/li>":
-        list = "<ol>\n\t<li>" + line + "</li>"
+        list = "\t<ol>\n\t\t<li>" + line + "</li>"
     else:
-        list = "\t<li>" + line + "</li>"
+        list = "\t\t<li>" + line + "</li>"
     return list
 
 
@@ -85,12 +85,12 @@ def unord_list_poss(line):
 
 def into_unord_list(line, previous_line):
     if previous_line[-4:] != "/li>":
-        list = "<ul>\n\t<li>" + line + "</li>"
+        list = "\t<ul>\n\t\t<li>" + line + "</li>"
     else:
-        list = "\t<li>" + line + "</li>"
+        list = "\t\t<li>" + line + "</li>"
     return list
 
 
 def into_paragraph(line):
-    list = "<p>" + line + "</p>"
+    list = "\t<p>" + line + "</p>"
     return list
