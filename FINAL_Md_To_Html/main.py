@@ -12,9 +12,11 @@ lines = cl.deleting_empty_lines(lines)
 
 outputfile = cl.creating_file()
 with open(outputfile, 'w') as fw:
+    fw.write("<head>\n</head>\n<body>\n")
     previous_line = "I'm the zero sentence"
     for line in lines:
         output_lines, previous_line = mod.grand_checker(line,previous_line)
         save = str(output_lines) +"\n"
         fw.write(save)
+    fw.write("</body>")
 print("Done!")

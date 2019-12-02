@@ -30,7 +30,6 @@ def basic_checker(line, sign, tag1, tag2):
     return line
 
 
-
 def clean(line, tag1, tag2):
     if str(tag1 + tag2) in line:
         line = line.replace(str(tag1 + tag2),"")
