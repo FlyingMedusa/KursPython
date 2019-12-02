@@ -53,13 +53,13 @@ def into_header(num, line):
 
 def ord_list_possibility(line):
     for k in range(0, len(line)):
-        if line[k].isnumeric() and line[k+1] == "." and line[k+2] == " ":
+        if line[k].isnumeric() and line[k + 1] == "." and line[k + 2] == " ":
             return True
-        elif line[k].isnumeric() and line[k+1].isnumeric():
+        elif line[k].isnumeric() and line[k + 1].isnumeric():
             continue
-        elif (line[k] == " " and line[k+1].isnumeric()):
+        elif (line[k] == " " and line[k + 1].isnumeric()):
             continue
-        elif line[k] == " " and line[k+1] == " ":
+        elif line[k] == " " and line[k + 1] == " ":
             continue
         else:
             return False
