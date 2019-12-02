@@ -2,7 +2,7 @@
 import moduleMdHtml as mod
 import CleanModule as cl
 
-filename = mod.loading_file()
+filename = cl.loading_file()
 print("Your file name:", filename)
 
 with open(filename, encoding="utf-8") as f:
@@ -10,7 +10,7 @@ with open(filename, encoding="utf-8") as f:
 
 lines = cl.deleting_empty_lines(lines)
 
-outputfile = mod.creating_file()
+outputfile = cl.creating_file()
 with open(outputfile, 'w') as fw:
     previous_line = "I'm the zero sentence"
     for line in lines:

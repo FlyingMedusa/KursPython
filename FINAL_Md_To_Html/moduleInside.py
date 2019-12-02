@@ -1,91 +1,33 @@
 
 
 def inside_checker(line):
-
-    line = is_bold1(line)
-    line = is_bold2(line)
-    line = is_italic1(line)
-    line = is_italic2(line)
+    line = basic_checker(line, "**", "<b>", "</b>")
+    line = basic_checker(line, "__", "<b>", "</b>")
+    line = basic_checker(line, "*", "<em>", "</em>")
+    line = basic_checker(line, "_", "<em>", "</em>")
     return line
 
 
-def is_bold1(line):
-    occ = line.count('**')
+def basic_checker(line, sign, mark1, mark2):
+    occ = line.count(sign)
     if occ > 1:
         if occ % 2 == 0:
             for i in range(0, occ + 1):
                 if i % 2 == 0:
-                    line = line.replace("**", "<b>", 1)
+                    line = line.replace(sign, mark1, 1)
                 else:
-                    line = line.replace("**", "</b>", 1)
+                    line = line.replace(sign, mark2, 1)
             return line
         else:
             for i in range(0, occ - 1):
                 if i % 2 == 0:
-                    line = line.replace("**", "<b>", 1)
+                    line = line.replace(sign, mark1, 1)
                 else:
-                    line = line.replace("**", "</b>", 1)
+                    line = line.replace(sign, mark2, 1)
             return line
     return line
 
 
-def is_bold2(line):
-    occ = line.count('__')
-    if occ > 1:
-        if occ % 2 == 0:
-            for i in range(0, occ + 1):
-                if i % 2 == 0:
-                    line = line.replace("__", "<b>", 1)
-                else:
-                    line = line.replace("__", "</b>", 1)
-            return line
-        else:
-            for i in range(0, occ - 1):
-                if i % 2 == 0:
-                    line = line.replace("__", "<b>", 1)
-                else:
-                    line = line.replace("__", "</b>", 1)
-            return line
-    return line
-
-
-def is_italic1(line):
-    occ = line.count('*')
-    if occ > 1:
-        if occ % 2 == 0:
-            for i in range(0, occ + 1):
-                if i % 2 == 0:
-                    line = line.replace("*", "<em>", 1)
-                else:
-                    line = line.replace("*", "</em>", 1)
-            return line
-        else:
-            for i in range(0, occ - 1):
-                if i % 2 == 0:
-                    line = line.replace("*", "<em>", 1)
-                else:
-                    line = line.replace("*", "</em>", 1)
-            return line
-    return line
-
-
-def is_italic2(line):
-    occ = line.count('*')
-    if occ > 1:
-        if occ % 2 == 0:
-            for i in range(0, occ + 1):
-                if i % 2 == 0:
-                    line = line.replace("_", "<em>", 1)
-                else:
-                    line = line.replace("_", "</em>", 1)
-            return line
-        else:
-            for i in range(0, occ - 1):
-                if i % 2 == 0:
-                    line = line.replace("_", "<em>", 1)
-                else:
-                    line = line.replace("_", "</em>", 1)
-            return line
     return line
 
 

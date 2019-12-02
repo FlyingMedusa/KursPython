@@ -9,15 +9,15 @@
 2. I just love _italic text_.
 3. Love**is** bold.
 6. Love_is_italic
-3. hahah mixing*** dsfs ** ds*
-4.fvvf d*** dsfsg*** kak.
+3. hah*ah mixing*** dsfs ** ds*
+4. fvvf d*** dsfsg*** ka*k.
 5. smakfm** dsf* dfsf* sdassd**
 
 ##This is h2
   + First item
 * Second item
- -Third item
- fadsgdfh **blah** haha
- dsgah
- tadjyst
+ - Third item
+ + fadsgdfh **blah** haha
+ * dsgah
+ - tadjyst
  + Fourth item 
