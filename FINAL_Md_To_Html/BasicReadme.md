@@ -4,7 +4,7 @@
 ####This is h4
 ######This is h6! Why not?
  1. I just love **bold text**.
-  1. I just love *italic text*.
+ 2. I just love *italic text*.
  2. I just love __bold text__.
  2. I just love _italic text_.
  3. Love**is** bold.
