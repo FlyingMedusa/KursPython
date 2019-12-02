@@ -1,29 +1,24 @@
 
 
 def inside_checker(line):
-    if is_bold1(line):
-        line = into_bold1(line)
-    if is_bold2(line):
-        line = into_bold2(line)
-    if "<b></b>" in line:
-        line = line.replace("<b></b>","")
+
+    line = is_bold1(line)
+    line = is_bold2(line)
     return line
 
 
 def is_bold1(line):
     occ = line.count('**')
     if occ > 1:
-        return True
-    else:
-        return False
+        line = into_bold1(line)
+    return line
 
 
 def is_bold2(line):
     occ = line.count('__')
     if occ > 1:
-        return True
-    else:
-        return False
+        line = into_bold2(line)
+    return line
 
 
 def into_bold1(line):
@@ -62,3 +57,9 @@ def into_bold2(line):
                 else:
                     line = line.replace("__", "</b>", 1)
             return line
+
+
+def clean(line):
+    if "<b></b>" in line:
+        line = line.replace("<b></b>","")
+    return line
