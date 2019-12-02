@@ -1,6 +1,3 @@
-import moduleInside as module
-
-
 def loading_file():
 
     while True:
@@ -54,8 +51,18 @@ def grand_checker(line,previous_line):
         line = into_paragraph(line)
     previous_line = line
     line = the_future_mode(p, previous_line)
-    line = module.inside_checker(line)
+    line = inside_checker(line)
     return line, previous_line
+
+
+def inside_checker(line):
+    if is_bold1(line):
+        line = into_bold1(line)
+    if is_bold2(line):
+        line = into_bold2(line)
+    if "<b></b>" in line:
+        line = line.replace("<b></b>","")
+    return line
 
 
 def the_future_mode(previous_line, now):
@@ -127,3 +134,59 @@ def into_unord_list(line, previous_line):
 def into_paragraph(line):
     list = "<p>" + line + "</p>"
     return list
+
+
+def is_bold1(line):
+    occ = line.count('**')
+    if occ > 1:
+        return True
+    else:
+        return False
+
+
+def is_bold2(line):
+    occ = line.count('__')
+    if occ > 1:
+        return True
+    else:
+        return False
+
+
+def into_bold1(line):
+    occ = line.count('**')
+    if occ > 1:
+        if occ % 2 == 0:
+            for i in range(0, occ + 1):
+                if i % 2 == 0:
+                    line = line.replace("**", "<b>", 1)
+                else:
+                    line = line.replace("**", "</b>", 1)
+            return line
+        else:
+            for i in range(0, occ - 1):
+                if i % 2 == 0:
+                    line = line.replace("**", "<b>", 1)
+                else:
+                    line = line.replace("**", "</b>", 1)
+            return line
+
+
+def into_bold2(line):
+    occ = line.count('__')
+    if occ > 1:
+        if occ % 2 == 0:
+            for i in range(0, occ + 1):
+                if i % 2 == 0:
+                    line = line.replace("__", "<b>", 1)
+                else:
+                    line = line.replace("__", "</b>", 1)
+            return line
+        else:
+            for i in range(0, occ - 1):
+                if i % 2 == 0:
+                    line = line.replace("__", "<b>", 1)
+                else:
+                    line = line.replace("__", "</b>", 1)
+            return line
+
+
