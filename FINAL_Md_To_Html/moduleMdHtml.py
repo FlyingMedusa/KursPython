@@ -29,10 +29,10 @@ def the_future_mode(previous_line, now):
     now = now.lstrip("\t")
     if previous_line[-4:] == "/li>" and now[:3] != "<li":
         if ord_list_possibility(previous_line):
-            now = "\t</ol>\n" + "\t\t" + now
+            now = "\t</ol>\n" + "\t\t\t" + now
             return now
         if unord_list_poss(previous_line):
-            now = "\t</ul>\n" + "\t\t" + now
+            now = "\t</ul>\n" + "\t\t\t" + now
             return now
     return now1
 
@@ -47,7 +47,7 @@ def deleting_char(line):
 
 def into_header(num, line):
 
-    header = "\t<h"+ str(num) + ">" + line + "</h" + str(num) + ">"
+    header = "\t\t<h"+ str(num) + ">" + line + "</h" + str(num) + ">"
     return header
 
 
@@ -69,11 +69,11 @@ def ord_list_possibility(line):
 
 def into_ord_list(line, previous_line):
     if previous_line[-4:] != "/li>":
-        line = nice.ordered_list(line)
-        list = "\t<ol>\n\t\t<li>1" + line + "</li>"
+        line = ordered_list(line)
+        list = "\t<ol>\n\t\t\t<li>1" + line + "</li>"
     else:
         line = ordered_list(line)
-        list = "\t\t<li>" + line + "</li>"
+        list = "\t\t\t<li>" + line + "</li>"
     return list
 
 
@@ -91,14 +91,16 @@ def unord_list_poss(line):
 
 def into_unord_list(line, previous_line):
     if previous_line[-4:] != "/li>":
-        list = "\t<ul>\n\t\t<li>" + line + "</li>"
+        line = unordered_list(line)
+        list = "\t<ul>\n\t\t\t<li>" + line + "</li>"
     else:
-        list = "\t\t<li>" + line + "</li>"
+        line = unordered_list(line)
+        list = "\t\t\t<li>" + line + "</li>"
     return list
 
 
 def into_paragraph(line):
-    list = "\t<p>" + line + "</p>"
+    list = "\t\t<p>" + line + "</p>"
     return list
 
 
@@ -110,4 +112,17 @@ def ordered_list(line):
             line = line[1:]
         elif el == ".":
             line = line[1:]
+            return line
+
+def unordered_list(line):
+    line = line.lstrip("\t")
+    line = line.lstrip(" ")
+    for el in line:
+        if el == "*":
+            line = line[1:]
+        elif el == "+":
+            line = line[1:]
+        elif el == "-":
+            line = line[1:]
+        elif el == " ":
             return line

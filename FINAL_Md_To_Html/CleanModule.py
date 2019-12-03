@@ -40,7 +40,9 @@ def creating_file():
     return filename
 
 
-def head_title():
-    title = input("\nPlease give me the title of your page:\n\t")
-    header = ("<head>\n<title>" + title + "</title>\n</head>\n")
-    return header
+def begin_html():
+    title = input('\nPlease give me the title of your page:\n\t')
+    start = ('<!doctype html>\n<html lang="en">\n'
+    '\t<head>\n\t\t<meta charset="utf-8">\n\t\t<title>' + title + '</title>\n'
+    '\t\t<link rel="stylesheet" href="./style.css">\n\t</head>\n')
+    return start
