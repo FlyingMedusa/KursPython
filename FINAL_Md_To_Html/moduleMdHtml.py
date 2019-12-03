@@ -31,7 +31,6 @@ def the_future_mode(previous_line, now, current_list):
     now1 = now
     now = now.lstrip("\t")
     if previous_line[-4:] == "/li>" and now[:3] != "<li":
-        print(current_list)
         if current_list == "ord":
             now = "\t\t</ol>\n" + "\t\t\t" + now
             return now

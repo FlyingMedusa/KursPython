@@ -5,8 +5,10 @@ def inside_checker(line):
     line = basic_checker(line, "__", "<b>", "</b>")
     line = basic_checker(line, "*", "<em>", "</em>")
     line = basic_checker(line, "_", "<em>", "</em>")
+    line = basic_checker(line, "`", "<code>", "</code>")
     line = clean(line, "<b>", "</b>")
     line = clean(line, "<em>", "</em>")
+    line = clean(line, "<code>", "</code>")
     return line
 
 

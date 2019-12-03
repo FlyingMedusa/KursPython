@@ -14,6 +14,9 @@
 5. smakfm** dsf* dfsf* sdassd**
 
 ##This is h2
+At the command prompt, type `nano`.
+Another `code`
+`line of code`
   + First item
 * Second item
  - Third item
