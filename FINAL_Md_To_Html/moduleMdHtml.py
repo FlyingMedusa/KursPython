@@ -19,6 +19,8 @@ def grand_checker(line,previous_line, current_list):
     elif unord_list_poss(line):
         current_list = current_list_checking(line)
         line = into_unord_list(line, previous_line)
+    elif line[0] == ">":
+        line = into_block(line)
     else:
         line = into_paragraph(line)
     previous_line = line
@@ -142,3 +144,9 @@ def current_list_checking(line):
     else:
         current_list = ""
         return current_list
+
+
+def into_block(line):
+    line = line.lstrip(">")
+    list = "\t\t<blockquote>" + line + "</blockquote>"
+    return list
