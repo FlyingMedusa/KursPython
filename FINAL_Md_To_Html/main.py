@@ -16,8 +16,9 @@ with open(outputfile, 'w') as fw:
     fw.write(begin)
     fw.write("\t<body>\n")
     previous_line = "I'm the zero sentence"
+    c_list = ""
     for line in lines:
-        output_lines, previous_line = mod.grand_checker(line,previous_line)
+        output_lines, previous_line,c_list = mod.grand_checker(line,previous_line, c_list)
         save = str(output_lines) +"\n"
         fw.write(save)
     fw.write("\t</body>\n</html>")

@@ -1,8 +1,9 @@
 import moduleInside as module
 
-def grand_checker(line,previous_line):
+def grand_checker(line,previous_line, current_list):
     line = line.strip("\n")
     p = previous_line
+    c_list = current_list
     if line[0] == "#":
         num = 0
         for i in line:
@@ -13,26 +14,29 @@ def grand_checker(line,previous_line):
                 line = into_header(num, line)
                 break
     elif ord_list_possibility(line):
+        current_list = current_list_checking(line)
         line = into_ord_list(line, previous_line)
     elif unord_list_poss(line):
+        current_list = current_list_checking(line)
         line = into_unord_list(line, previous_line)
     else:
         line = into_paragraph(line)
     previous_line = line
-    line = the_future_mode(p, previous_line)
+    line = the_future_mode(p, previous_line, c_list)
     line = module.inside_checker(line)
-    return line, previous_line
+    return line, previous_line, current_list
 
 
-def the_future_mode(previous_line, now):
+def the_future_mode(previous_line, now, current_list):
     now1 = now
     now = now.lstrip("\t")
     if previous_line[-4:] == "/li>" and now[:3] != "<li":
-        if ord_list_possibility(previous_line):
-            now = "\t</ol>\n" + "\t\t\t" + now
+        print(current_list)
+        if current_list == "ord":
+            now = "\t\t</ol>\n" + "\t\t\t" + now
             return now
-        if unord_list_poss(previous_line):
-            now = "\t</ul>\n" + "\t\t\t" + now
+        if current_list == "unord":
+            now = "\t\t</ul>\n" + "\t\t\t" + now
             return now
     return now1
 
@@ -70,7 +74,7 @@ def ord_list_possibility(line):
 def into_ord_list(line, previous_line):
     if previous_line[-4:] != "/li>":
         line = ordered_list(line)
-        list = "\t<ol>\n\t\t\t<li>1" + line + "</li>"
+        list = "\t\t<ol>\n\t\t\t<li>" + line + "</li>"
     else:
         line = ordered_list(line)
         list = "\t\t\t<li>" + line + "</li>"
@@ -92,7 +96,7 @@ def unord_list_poss(line):
 def into_unord_list(line, previous_line):
     if previous_line[-4:] != "/li>":
         line = unordered_list(line)
-        list = "\t<ul>\n\t\t\t<li>" + line + "</li>"
+        list = "\t\t<ul>\n\t\t\t<li>" + line + "</li>"
     else:
         line = unordered_list(line)
         list = "\t\t\t<li>" + line + "</li>"
@@ -114,6 +118,7 @@ def ordered_list(line):
             line = line[1:]
             return line
 
+
 def unordered_list(line):
     line = line.lstrip("\t")
     line = line.lstrip(" ")
@@ -126,3 +131,15 @@ def unordered_list(line):
             line = line[1:]
         elif el == " ":
             return line
+
+
+def current_list_checking(line):
+    if ord_list_possibility(line):
+        current_list = "ord"
+        return current_list
+    elif unord_list_poss(line):
+        current_list = "unord"
+        return current_list
+    else:
+        current_list = ""
+        return current_list
