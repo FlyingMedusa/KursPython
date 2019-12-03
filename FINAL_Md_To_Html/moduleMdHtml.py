@@ -71,9 +71,15 @@ def ord_list_possibility(line):
 
 def into_ord_list(line, previous_line):
     if previous_line[-4:] != "/li>":
-
-        list = "\t<ol>\n\t\t<li>" + line + "</li>"
+        line = nice.ordered_list(line)
+        list = "\t<ol>\n\t\t<li>1" + line + "</li>"
     else:
+        line = nice.ordered_list(line)
+        print(previous_line)
+        prev_num = nice.reading_numbers(previous_line)
+        print(prev_num)
+        line = nice.giving_numbers(prev_num, line)
+        print(line)
         list = "\t\t<li>" + line + "</li>"
     return list
 
