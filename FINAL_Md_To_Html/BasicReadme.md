@@ -6,7 +6,7 @@
  1. I just love **bold text**.
  2. I just love *italic text*.
  2. I just love __bold text__.
- 2. I just love _italic text_.
+2. I just love _italic text_.
  3. Love**is** bold.
 6. Love_is_****italic
  3. hah*ah mixing*** dsfs ** ds*
@@ -21,3 +21,4 @@
  * dsgah
  - tadjyst
  + Fourth item 
+just another words

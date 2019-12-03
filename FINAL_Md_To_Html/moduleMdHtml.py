@@ -1,4 +1,5 @@
 import moduleInside as module
+import nice_ord_list as nice
 
 
 def grand_checker(line,previous_line):
@@ -70,6 +71,7 @@ def ord_list_possibility(line):
 
 def into_ord_list(line, previous_line):
     if previous_line[-4:] != "/li>":
+
         list = "\t<ol>\n\t\t<li>" + line + "</li>"
     else:
         list = "\t\t<li>" + line + "</li>"
@@ -77,6 +79,8 @@ def into_ord_list(line, previous_line):
 
 
 def unord_list_poss(line):
+    line = line.lstrip("\t")
+    line = line.lstrip("<li>")
     for k in range(0, len(line)):
         if (line[k] == "+" or line[k] == "*" or line[k] == "-") and line[k+1] == " ":
             return True
