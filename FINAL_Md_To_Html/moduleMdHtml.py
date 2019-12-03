@@ -1,6 +1,4 @@
 import moduleInside as module
-import nice_ord_list as nice
-
 
 def grand_checker(line,previous_line):
     line = line.strip("\n")
@@ -74,12 +72,7 @@ def into_ord_list(line, previous_line):
         line = nice.ordered_list(line)
         list = "\t<ol>\n\t\t<li>1" + line + "</li>"
     else:
-        line = nice.ordered_list(line)
-        print(previous_line)
-        prev_num = nice.reading_numbers(previous_line)
-        print(prev_num)
-        line = nice.giving_numbers(prev_num, line)
-        print(line)
+        line = ordered_list(line)
         list = "\t\t<li>" + line + "</li>"
     return list
 
@@ -107,3 +100,14 @@ def into_unord_list(line, previous_line):
 def into_paragraph(line):
     list = "\t<p>" + line + "</p>"
     return list
+
+
+def ordered_list(line):
+    line = line.lstrip("\t")
+    line = line.lstrip(" ")
+    for el in line:
+        if el.isnumeric():
+            line = line[1:]
+        elif el == ".":
+            line = line[1:]
+            return line
