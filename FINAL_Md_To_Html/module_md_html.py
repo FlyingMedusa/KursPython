@@ -1,4 +1,4 @@
-import moduleInside as module
+import module_inside as module
 
 def grand_checker(line,previous_line, current_list):
     line = line.strip("\n")

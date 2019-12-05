@@ -1,6 +1,6 @@
 #Convert md (marktdown) to html
-import moduleMdHtml as mod
-import CleanModule as cl
+import module_md_html as mod
+import clean_module as cl
 
 filename = cl.loading_file()
 print("Your file name:", filename)
