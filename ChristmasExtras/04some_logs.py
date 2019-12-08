@@ -1,26 +1,5 @@
-some_logs = {
-    20 : 'ERROR',
-    33 : 'WARNING',
-    59 : 'WARNING4',
-    74 : 'ERROR',
-    99 : 'ERROR',
-    81 : 'WARNING',
-    62 : 'INFO',
-    84 : 'ERROR',
-    36 : 'WARNING',
-    46 : 'WARNING2',
-    85 : 'ERROR',
-    64 : 'INFO',
-    71 : 'ERROR1',
-    7 : 'ERROR',
-    37 : 'INFO4',
-    90 : 'INFO',
-    13 : 'INFO',
-    93 : 'INFO',
-    68 : 'ERROR',
-    47 : 'WARNING'
-}
-
+filename = 'logs.csv'
+dict = {}
 chosen_logs = []
 
 
@@ -41,6 +20,34 @@ def from_to(y):
             print("Give an INTEGER -", e)
 
 
+with open(filename, 'r') as fopen:
+    content = fopen.read()
+
+
+with open('dictionary.txt', 'w') as fw:
+    turn = 0
+    for line in content.split():
+        if turn == 0:
+            line = line.replace(",", " ")
+            fw.write(line)
+            turn = 1
+        elif turn == 1:
+            line = line.replace(",", "")
+            fw.write(line + "\n")
+            turn = 0
+
+
+with open('dictionary.txt', 'r') as fopen:
+    for line in fopen:
+       (key, value) = line.split()
+       dict[int(key)] = value
+
+
+
+
 start_interv = from_to("start")
 end_interv = from_to("end")
-print(get_logs(start_interv, end_interv, some_logs))
+
+chosen_logs = get_logs(start_interv, end_interv, dict)
+list_to_set = set(chosen_logs)
+print(list_to_set)

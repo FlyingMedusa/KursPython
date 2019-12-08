@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef6d86be-ab97-468b-a485-88565de0b073" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/04some_logs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04some_logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/04some_logs.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +24,7 @@
   <component name="ProjectId" id="1UZ9o7NUGQ8nhEQC08VvJLwSm1I" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="D:/PythonELTIT/Homeworks/019alice_word_frequencies.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FINAL_Md_To_Html/clean_module.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
