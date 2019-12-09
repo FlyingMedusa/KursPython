@@ -1,53 +1,43 @@
-filename = 'logs.csv'
-dict = {}
-chosen_logs = []
+from datetime import datetime
 
 
-def get_logs(start_interv, end_interv, dict):
-    for i in range(start_interv, end_interv+1):
-        if i in dict:
-            value = dict.get(i)
+def get_logs(start_interv, end_interv, logs):
+    chosen_logs = []
+    for i in range(start_interv, end_interv + 1):
+        if i in logs:
+            value = logs[i]
             chosen_logs.append(value)
-    return chosen_logs
+    return set(chosen_logs)
 
 
-def from_to(y):
-    while True:
-        try:
-            x = int(input("Please provide the " + y + " interval:\t"))
-            return x
-        except ValueError as e:
-            print("Give an INTEGER -", e)
+def main():
+    with open('logs_timestamp.csv', 'r') as fopen:
+        content = fopen.read()
 
+    intro = """
+        Format: year, month, day, hour, minute, second
+        Remember to separate them with SPACES!
+        """
+    print(intro)
+    start = input("Please provide the start time:\t")
+    range_start = start.split(" ")
+    end = input("Please provide the end time:\t")
+    range_end = end.split(" ")
 
-with open(filename, 'r') as fopen:
-    content = fopen.read()
+    some_logs = {}
 
+    content = content.split('\n')
+    for l in content:
+        if l != '':
+            line = l.split(',')
 
-with open('dictionary.txt', 'w') as fw:
-    turn = 0
-    for line in content.split():
-        if turn == 0:
-            line = line.replace(",", " ")
-            fw.write(line)
-            turn = 1
-        elif turn == 1:
-            line = line.replace(",", "")
-            fw.write(line + "\n")
-            turn = 0
+            some_logs[line[0]] = line[1].strip().replace("'", "")
+            some_logs[datetime.fromtimestamp(int(line[0]))] = some_logs.pop(line[0])
 
+    print(some_logs)
 
-with open('dictionary.txt', 'r') as fopen:
-    for line in fopen:
-       (key, value) = line.split()
-       dict[int(key)] = value
+    chosen_logs = get_logs(range_start, range_end, some_logs)
+    print(chosen_logs)
 
-
-
-
-start_interv = from_to("start")
-end_interv = from_to("end")
-
-chosen_logs = get_logs(start_interv, end_interv, dict)
-list_to_set = set(chosen_logs)
-print(list_to_set)
+if __name__ == '__main__':
+    main()
