@@ -15,14 +15,15 @@ def main():
         content = fopen.read()
 
     intro = """
-        Format: year, month, day, hour, minute, second
-        Remember to separate them with SPACES!
+        Format: day-month-year hour:minutes
         """
     print(intro)
     start = input("Please provide the start time:\t")
-    range_start = start.split(" ")
+    start_date = datetime.strptime(start, '%d-%m-%Y %H:%M')
+    start_timestamp = datetime.timestamp(start_date)
     end = input("Please provide the end time:\t")
-    range_end = end.split(" ")
+    end_date = datetime.strptime(end, '%d-%m-%Y %H:%M')
+    end_timestamp = datetime.timestamp(end_date)
 
     some_logs = {}
 
@@ -31,12 +32,12 @@ def main():
         if l != '':
             line = l.split(',')
 
-            some_logs[line[0]] = line[1].strip().replace("'", "")
-            some_logs[datetime.fromtimestamp(int(line[0]))] = some_logs.pop(line[0])
+            some_logs[int(line[0])] = line[1].strip().replace("'", "")
 
-    print(some_logs)
+    print(int(start_timestamp))
+    print(int(end_timestamp))
 
-    chosen_logs = get_logs(range_start, range_end, some_logs)
+    chosen_logs = get_logs(int(start_timestamp), int(end_timestamp), some_logs)
     print(chosen_logs)
 
 if __name__ == '__main__':
