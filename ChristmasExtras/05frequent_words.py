@@ -47,7 +47,23 @@ list_of_values = sorted(list_of_values)
 
 sorted_list = []
 
-i = 0
-for el in list_of_values:
-    sorted_list.append(str(i) + ":", el)
 
+sorted_list.append(list_of_values[-3:])
+
+
+for key, value in words_frequency.items():
+
+    for element in sorted_list:
+        print(element)
+        for el in element:
+            print(el)
+            if value == el:
+                print(key)
+                
+# i = 0
+# for el in list_of_values:
+#     value_string = str(i) + ":", words_frequency[el], el
+#     sorted_list.append(value_string)
+#     i += 1
+
+print(sorted_list)
