@@ -1,4 +1,4 @@
-# Python Course
+# Python Course :snake:
 
 This repository contains code written for learning purposes.
 Python course by Flynerd.pl 
