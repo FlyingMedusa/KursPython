@@ -1,4 +1,4 @@
-#Pobierz od użytkownika parzystą listę elementów. Sprawdź czy 2 środkowe elementy są takie same.
+# Pobierz od użytkownika parzystą listę elementów. Sprawdź czy 2 środkowe elementy są takie same.
 
 elements = int(input("\nStworzę tabelę i sprawdzę czy 2 środkowe elementy są takie same.\nPodaj więc parzystą liczbę elementów:\n\t"))
 

@@ -3,8 +3,8 @@ filename = 'PanTadeusz.txt'
 with open(filename, 'r', encoding='utf-8') as fopen:
     lines = fopen.read()
 
-lines = lines.replace(",","")
-lines = lines.replace("\n"," ")
+lines = lines.replace(",", "")
+lines = lines.replace("\n", " ")
 words = lines.split(" ")
 print(words)
 

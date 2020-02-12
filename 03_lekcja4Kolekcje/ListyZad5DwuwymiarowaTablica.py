@@ -4,6 +4,6 @@ array = ["Dorota", "Wellman", "dziennikarka"], ["Adam","Małysz", "sportowiec"],
 #forma listy
 print("\n \t **ZNANI POLACY:**\n")
 for i in range(len(array)):
-    print("\t", array[i][0] , array[i][1], "-",array[i][2])
+    print("\t", array[i][0], array[i][1], "-", array[i][2])
     i = i+1
 

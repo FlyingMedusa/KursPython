@@ -47,7 +47,7 @@ class Human(Mammals):
         print("Unfortunately not all human beings seem to meet those criteria...")
 
     def sound(self):
-        return "głosuję na Korwina!"
+        return "I need more potatoes in my soup..."
 
 print("Look what we have here!")
 cat1 = Cat("Messy")

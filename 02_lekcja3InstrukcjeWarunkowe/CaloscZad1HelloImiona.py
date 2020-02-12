@@ -10,4 +10,4 @@ for i in names:
 id = 0
 while id < len(names):
     print("Hi", names[id])
-    id = id+1
+    id += 1

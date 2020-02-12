@@ -34,3 +34,4 @@ obj_anna = Student('anna', 'kowalska', 23, 4.7)
 obj_arek = Student('arkadiusz', 'nowak', 21, 3.9)
 
 print(obj_anna.email)
+print(obj_arek.email)

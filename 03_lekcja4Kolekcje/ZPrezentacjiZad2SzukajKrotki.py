@@ -14,6 +14,6 @@ for n in numbers:
     if isinstance(n, tuple):
         break
     else:
-        counter = counter +1
+        counter += 1
 
 print(counter)

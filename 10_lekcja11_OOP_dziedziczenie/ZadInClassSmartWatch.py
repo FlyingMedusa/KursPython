@@ -33,8 +33,6 @@ class Smartwatch(Watch, Phone):
         super().__init__()
 
 
-
-
 u = Useful_stuff()
 w = Watch()
 p = Phone()

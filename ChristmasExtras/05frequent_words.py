@@ -21,11 +21,6 @@ sentences = [
 word_list = []
 words_frequency = {}
 
-# Example result:
-# 1. "mam" - 12
-# 2. "tak" - 5
-# 3. "z" - 2
-
 for sentence in sentences:
     words = sentence.split()
     for word in words:
@@ -40,30 +35,9 @@ for word in word_list:
         words_frequency[word] = 1
 
 print(words_frequency)
-
-
-list_of_values = words_frequency.values()
-list_of_values = sorted(list_of_values)
-
-sorted_list = []
-
-
-sorted_list.append(list_of_values[-3:])
-
+list_of_values = sorted(words_frequency.values())
+sorted_list = list_of_values[-3:]
 
 for key, value in words_frequency.items():
-
-    for element in sorted_list:
-        print(element)
-        for el in element:
-            print(el)
-            if value == el:
-                print(key)
-                
-# i = 0
-# for el in list_of_values:
-#     value_string = str(i) + ":", words_frequency[el], el
-#     sorted_list.append(value_string)
-#     i += 1
-
-print(sorted_list)
+    if value in sorted_list:
+        print(f"{key} - {value}")

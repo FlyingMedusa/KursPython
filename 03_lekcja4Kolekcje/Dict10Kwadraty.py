@@ -6,7 +6,7 @@ kwadraty_liczb= {}
 
 ile = int(input("Podaj ile liczb chcesz umieścić w słowniku:"))
 
-for i in range(0 , ile):
+for i in range(0, ile):
     liczba = int(input("Podaj dowolną liczbę:"))
     kwadraty_liczb[liczba] = liczba**2
 

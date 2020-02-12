@@ -1,11 +1,11 @@
-def fibonacci_number(n):
+def fib(n):
     if n == 0:
         return 0
     elif n == 1:
         return 1
     else:
-        return fibonacci_number(n-1) + fibonacci_number(n-2)
+        return fib(n-1) + fib(n-2)
 
 
-n = int(input("Podaj liczbę:"))
-print(fibonacci_number(n))
+n = int(input("Give me a number:"))
+print(fib(n))

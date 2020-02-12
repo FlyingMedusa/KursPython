@@ -1,7 +1,7 @@
 class Horse:
 
-    def poop(self):
-        print("Poop poop")
+    def give_voice(self):
+        print("happy neigh")
 
     def fly(self):
         print("Horse can't fly")
@@ -9,7 +9,7 @@ class Horse:
 
 class Unicorn:
 
-    def poop(self):
+    def give_voice(self):
         print("Rainboooowww")
 
     def fly(self):
@@ -18,7 +18,7 @@ class Unicorn:
 
 
 def family_test(animal):
-    animal.poop()
+    animal.give_voice()
 
 
 arrow = Horse()

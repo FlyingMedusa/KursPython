@@ -1,8 +1,8 @@
 # Utwórz dekorator @timepassed mierzący czas działania dowolnej funkcji.
 import time
-#IN PROGRESS
+#PSEUDOKOD - TASK IN PROGRESS
 start = time.now()
-quicksort(lista_100000000 elementow)
+quicksort(lista_100000000_elementow)
 snd = time.now()
 timer_q = end - start
 

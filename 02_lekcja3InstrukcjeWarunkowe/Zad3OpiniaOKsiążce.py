@@ -5,7 +5,7 @@ srednia = (opi1 + opi2 + opi3)/3
 
 if srednia > 7:
     print("Bardzo dobry!")
-elif srednia <7 and srednia > 5:
+elif 7 > srednia > 5:
     print("Przeciętna")
 else:
     print("Nie warta uwagi")

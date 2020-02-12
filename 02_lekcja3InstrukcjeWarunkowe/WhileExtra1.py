@@ -11,5 +11,5 @@ while el < len(words_list):
             print("")
             break
         else:
-            print(i, end = "")
+            print(i, end="")
     el += 1

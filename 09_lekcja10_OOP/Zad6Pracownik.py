@@ -69,7 +69,7 @@ def showing_files(worker):
     h_care =  worker.health_care()
     b_tax = worker.basic_taxes()
     money_left = worker.salary - h_care - b_tax
-    print(worker.name, worker.surname, "Has a salary of", worker.salary, "but after deduction only",money_left, "PLN are left")
+    print(worker.name, worker.surname, "Has a salary of", worker.salary, "but after a reduction only",money_left, "PLN left")
     print("\nIf you think that", worker.name, "earns too much, write an email:")
     print("\t\t",worker.email())
 

@@ -11,7 +11,7 @@ elif dlugosc == 5:
 else:
     print("Ten ciąg znaków ma mniej niż 5 znaków")
 
-if czyMaA >0:
+if czyMaA > 0:
     print("Zamieniam 'a' na 'z'!" , ciag.replace("a","z"))
 else:
     print("Twój ciąg nie zawiera 'a'")

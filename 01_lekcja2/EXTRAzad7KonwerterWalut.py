@@ -9,4 +9,4 @@ kurs_euro = 4.30
 kurs_dolar = 3.93
 money_euro = money/kurs_euro
 money_dolar = money/kurs_dolar
-print("Biorąc ze sobą", money , "PLN masz" , int(money_euro),"Euro i", int(money_dolar), "USD." )
+print("Biorąc ze sobą", money, "PLN masz", int(money_euro), "Euro i", int(money_dolar), "USD.")

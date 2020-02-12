@@ -1,4 +1,5 @@
-print("Oto minimalistyczny kalkulator BMI. \nZaraz zostaniesz poproszony o podanie swojej wagi w kilogramach oraz wzrostu w metrach. ")
+print("Oto minimalistyczny kalkulator BMI. \n"
+      "Zaraz zostaniesz poproszony o podanie swojej wagi w kilogramach oraz wzrostu w metrach. ")
 print("Pamiętaj aby podając wzrost używać kropki a nie przecinka.")
 input("Jeśli jesteś gotowy wciśnij ENTER...")
 masa = float(input("Podaj swoją wagę (w kilogramach): \n"))
